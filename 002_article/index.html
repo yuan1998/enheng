@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      position: relative;
+      margin: 0;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      vertical-align: top;
+      
+    }
+    body{
+      background: rgb(207, 205, 205);
+    }
+    .article {
+      position: relative;
+    }
+
+    .compile {
+      display: none;
+      width: 500px;
+      height: 200px;
+      background: rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 0px;
+      left: 200px;
+    }
+
+    #article_form {
+      margin: 20px;
+      background: rgba(255,255,255,1);
+      display: inline-block;
+    }
+    #add_input{
+      
+    }
+    .title_input{
+      display: block;
+      width: 500px;
+      height: 30px;
+      margin-bottom: 20px;
+      margin: 0px 10px;
+    }
+    #article_form .text_bar {
+      display: block;
+      width: 500px;
+      height: 180px;
+      outline: none;
+      margin-bottom: 10px;
+      border: 1px solid red;
+      margin: 0px 10px;
+      resize: none;
+    }
+    .article{
+      background: rgba(255,255,255,1);
+      margin:20px;
+    }
+    .submit_btn{
+      height: 22px;
+      position: absolute;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="add_input">
+    <form id="article_form">撰写贴文
+      <input type="text" class="title_input" name="title" value="">
+      <textarea name="content" class="text_bar" cols="30" rows="10"></textarea>
+      <label class="up_input">
+        <input type="file" name="image" class="up_img">
+      </label>
+      <input type="text" class="author_input" name="author" value="" placeholder="匿名发表">
+      <button class="submit_btn" type="submit">发表</button>
+    </form>
+  </div>
+  <div id="article_content_bar"></div>
+  <script src="./JS/local.js"></script>
+  <script src="./JS/main.js"></script>
+  <script src="./JS/ui.js"></script>
+</body>
+
+</html>
