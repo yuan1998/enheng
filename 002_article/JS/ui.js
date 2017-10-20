@@ -1,74 +1,71 @@
-; (function () {
-  'use strict'
-  var read,
-    input,
-    wrap,
-    i,
-    div,
-    article_list,
-    comment_list,
-    article_form = document.querySelector('#article_form'),
-    article_content_bar = document.querySelector('#article_content_bar');
+;(function () {
+    'use strict'
+    var input,
+        wrap,
+        div,
+        article_list,
+        comment_list,
+        article_form = document.querySelector('#article_form'),
+        article_content_bar = document.querySelector('#article_content_bar');
 
 
+    init();
 
-  init();
-
-  /** 初始化  （文章添加事件 */
-  function init() {
-    render();
-    input = article_form.children;
-    article_form.addEventListener('submit', function (e) {
-      wrap = {};
-      e.preventDefault();
-      for (var i = 0; i < input.length; i++) {
-        if (input[i].nodeName == "INPUT" || input[i].nodeName == "TEXTAREA") {
-          var key = input[i].getAttribute('name');
-          var val = input[i].value;
-          wrap[key] = val;
-          input[i].value = '';
-        }
-      }
-      wrap.id = s.get('article_id_list') + 1;
-      b.add(wrap);
-      console.log(wrap);
-      one_render(wrap.id);
-    })
-  }
-
-  /** 删除按钮事件 */
-  function del_even(el) {
-    el.addEventListener('click', function () {
-      var id = this.parentNode.id;
-      b.del(id)
-      this.parentNode.innerHTML = '';
-    })
-  }
-
-
-  /** 渲染 */
-  function render() {
-    article_content_bar.innerHTML = '';
-    article_list = s.get('article_list');
-
-    for (var i = 0; i < article_list.length; i++) {
-      var each = article_list[i];
-      if (each.visible) {
-        one_render(each.id);
-      }
+    /** 初始化  （文章添加事件 */
+    function init() {
+        render();
+        input = article_form.children;
+        article_form.addEventListener('submit', function (e) {
+            wrap = {};
+            e.preventDefault();
+            for (var i = 0; i < input.length; i++) {
+                if (input[i].nodeName === "INPUT" || input[i].nodeName === "TEXTAREA") {
+                    var key = input[i].getAttribute('name');
+                    var val = input[i].value;
+                    wrap[key] = val;
+                    input[i].value = '';
+                }
+            }
+            wrap.id = s.get('article_id_list') + 1;
+            b.add(wrap);
+            console.log(wrap);
+            one_render(wrap.id);
+        })
     }
-  }
+
+    /** 删除按钮事件 */
+    function del_even(el) {
+        el.addEventListener('click', function () {
+            var id = this.parentNode.id;
+            b.del(id)
+            this.parentNode.innerHTML = '';
+        })
+    }
 
 
-  /** 单个渲染*/
-  function one_render(id) {
-    var each = b.find(id);
+    /** 渲染 */
+    function render() {
+        article_content_bar.innerHTML = '';
+        article_list = s.get('article_list');
 
-    div = document.createElement('div')
-    div.innerHTML = `
+        for (var i = 0; i < article_list.length; i++) {
+            var each = article_list[i];
+            if (each.visible) {
+                one_render(each.id);
+            }
+        }
+    }
+
+
+    /** 单个渲染*/
+    function one_render(id) {
+        var each = b.find(id);
+        let date = date_diff(each.date);
+        div = document.createElement('div');
+        div.innerHTML = `
       <h3 class="title">${each.title}</h3>
       <p class="content">${each.content}</p>
-      <p>${'作者： ' + each.author + '   创建日期：   ' + each.date}</p>
+      <p>${'作者： ' + each.author + '   创建日期：   ' + date}</p>
       <button class= "del_btn"> 点我删除</button>
       <button class="compile_btn">编辑</button>
       <form class="comment_form">
@@ -84,106 +81,141 @@
       </form>
       <div class="comment_bar">评论：</div>
       `;
-    div.setAttribute('class', 'article');
-    div.setAttribute('id', each.id);
-    article_content_bar.insertBefore(div,article_content_bar.firstChild);
+        div.setAttribute('class', 'article');
+        div.setAttribute('id', each.id);
+        article_content_bar.insertBefore(div, article_content_bar.firstChild);
 
-    var comment_form = div.querySelector('.comment_form'),
-    comment_input = div.querySelector('.comment_input'),
-    comment_bar = div.querySelector('.comment_bar'),
-    comment_user_input =div.querySelector('.comment_user_input'),
-    del_btn = div.querySelector('.del_btn'),
-    compile_btn = div.querySelector('.compile_btn'),
-    compile = div.querySelector('.compile'),
-    compile_title = div.querySelector('.compile_title'),
-    comile_content = div.querySelector('.comile_content'),
-    colse_btn = div.querySelector('.colse_btn'),
-    content = div.querySelector('.content'),
-    title = div.querySelector('.title');
-
-
-    commentBarEvent(comment_form,comment_input,each.id,comment_bar,comment_user_input);
-    del_even(del_btn);
-    compile_event(compile_btn,compile);
-    update_btn_event(compile_title,comile_content,compile,colse_btn,content,title);
-    comment_render(each.id,comment_bar);
-  }
-  /**编辑按钮事件 */
-  function compile_event(each,bar){
-    each.addEventListener('click',function(e){
-      e.preventDefault();
-      console.log(bar.style.display)  
-      bar.style.display = 'block';
-    })
-
-  }
-
-  /**更新按钮事件 */
-  function update_btn_event(title_input,content_input,update_form,colse_btn,content,title){
-    update_form.addEventListener('submit',function(yi){
-      yi.preventDefault();
-      var id = this.parentNode.id;
-      var pack = {
-        title : title_input.value,
-        content :content_input.value,
-      }
-
-      b.update(id,pack);
-      content.innerHTML= content_input.value;
-      title.innerHTML = title_input.value;
-      update_form.style.display = 'none';
-    })
-    colse_btn.addEventListener('click',function(e){
-      update_form.style.display = 'none';  
-    })
-  }
+        var comment_form = div.querySelector('.comment_form'),
+            comment_input = div.querySelector('.comment_input'),
+            comment_bar = div.querySelector('.comment_bar'),
+            comment_user_input = div.querySelector('.comment_user_input'),
+            del_btn = div.querySelector('.del_btn'),
+            compile_btn = div.querySelector('.compile_btn'),
+            compile = div.querySelector('.compile'),
+            compile_title = div.querySelector('.compile_title'),
+            comile_content = div.querySelector('.comile_content'),
+            colse_btn = div.querySelector('.colse_btn'),
+            content = div.querySelector('.content'),
+            title = div.querySelector('.title');
 
 
-
-  /**评论渲染 */
-  function comment_render(id,bar){
-    comment_list =s.get('comment_list');
-    comment_list.forEach(function(each){
-      if(each.id == id){
-        comment_item_render(each,bar);
-      }
-    })
-
-  }
-
-  /**单条评论渲染 */
-  function comment_item_render(each,bar){
-    if(!each.comment){
-      console.log("没内容")
-      return;
+        commentBarEvent(comment_form, comment_input, each.id, comment_bar, comment_user_input);
+        del_even(del_btn);
+        compile_event(compile_btn, compile);
+        update_btn_event(compile_title, comile_content, compile, colse_btn, content, title);
+        comment_render(each.id, comment_bar);
     }
-    console.log('each.user',each.user)
-    div = document.createElement('div')
-    div.innerHTML=`
+
+    /*  日期转换 */
+    function date_diff(dateTimestamp) {
+        let result;
+        let second = 1000;
+        let minute = second * 60;
+        let hour = minute * 60;
+        let day = hour * 24;
+        let month = day * 30;
+        let year = month * 12;
+        let now = new Date().getTime();
+        let diffValue = now -dateTimestamp;
+        if (diffValue < 0) return;
+        let yearC = diffValue / year;
+        let monthC = diffValue / month;
+        let dayC = diffValue / day;
+        let hourC = diffValue / hour;
+        let minuteC = diffValue / minute;
+        let secondC = diffValue / second;
+        if (yearC >= 1) {
+            result = "" + parseInt(yearC) + "年前";
+        } else if (monthC >= 1) {
+            result = "" + parseInt(monthC) + "月前";
+        } else if (dayC >= 1) {
+            result = "" + parseInt(dayC) + "日前"
+        } else if (hourC >= 1) {
+            result = "" + parseInt(hourC) + "小时前";
+        } else if (minuteC >= 1) {
+            result = "" + parseInt(minuteC) + "分钟前";
+        } else result = "" + parseInt(secondC) + "秒前";
+        return result;
+    }
+
+
+    /**编辑按钮事件 */
+    function compile_event(each, bar) {
+        each.addEventListener('click', function (e) {
+            e.preventDefault();
+            console.log(bar.style.display);
+            bar.style.display = 'block';
+        })
+
+    }
+
+    /**更新按钮事件 */
+    function update_btn_event(title_input, content_input, update_form, colse_btn, content, title) {
+        update_form.addEventListener('submit', function (yi) {
+            yi.preventDefault();
+            var id = this.parentNode.id;
+            var pack = {
+                title: title_input.value,
+                content: content_input.value,
+            };
+
+            b.update(id, pack);
+            content.innerHTML = content_input.value;
+            title.innerHTML = title_input.value;
+            update_form.style.display = 'none';
+        });
+        colse_btn.addEventListener('click', function (e) {
+            update_form.style.display = 'none';
+        })
+    }
+
+
+    /**评论渲染 */
+    function comment_render(id, bar) {
+        comment_list = s.get('comment_list');
+        comment_list.forEach(function (each) {
+            if (each.id == id) {
+                comment_item_render(each, bar);
+            }
+        })
+
+    }
+
+    /**单条评论渲染 */
+    function comment_item_render(each, bar) {
+        if (!each.comment) {
+            console.log("没内容")
+            return;
+        }
+        console.log('each.user', each.user);
+        div = document.createElement('div');
+        div.innerHTML = `
     <div>
+    
     <div>${each.user} : ${each.comment}</div>
     </div>
-    `
-    div.setAttribute('class','comment_item')
-    bar.appendChild(div);
-  }
+    `;
+        div.setAttribute('class', 'comment_item');
+        bar.appendChild(div);
+    }
 
+    //👀 很久很久很
 
-  /**评论按钮事件 */
-  function commentBarEvent(btn,input,id,bar,user){
-    btn.addEventListener('submit',function(e){
-      e.preventDefault();
-      user.value? user.value=user.value : user.value='匿名';
+    /**评论按钮事件 */
+    function commentBarEvent(btn, input, id, bar, user) {
+        btn.addEventListener('submit', function (e) {
+            e.preventDefault();
+            user.value ? user.value = user.value : user.value = '匿名';
 
-      var each = {
-        user:user.value,
-        comment:input.value,
-      }
-      input.value='';
-      user.value ='';
-      b.comment(id,each);
-      comment_item_render(each,bar);
-    })
-  }
+            var each = {
+                user: user.value,
+                comment: input.value,
+            };
+            input.value = '';
+            user.value = '';
+            b.comment(id, each);
+            comment_item_render(each, bar);
+        })
+    }
 
 })();

@@ -62,7 +62,7 @@
       new_article.author = '匿名';
     }
 
-    new_article.date = new Date().toLocaleString();
+    new_article.date = new Date().getTime();
     new_article.visible = true;
     article_list.push(new_article);
     sync();
