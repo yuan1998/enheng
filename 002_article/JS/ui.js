@@ -71,7 +71,7 @@
       <form class="comment_form">
         <input type="text" class="comment_input">
         <input type="text" class="comment_user_input">
-        <button type=""submit > 评论 </button>
+        <button type="submit" > 评论 </button>
       </form>
       <form class="compile">
         <input class="compile_title" value="${each.title}">
@@ -164,7 +164,7 @@
             title.innerHTML = title_input.value;
             update_form.style.display = 'none';
         });
-        colse_btn.addEventListener('click', function (e) {
+        colse_btn.addEventListener('click', function () {
             update_form.style.display = 'none';
         })
     }
@@ -174,7 +174,7 @@
     function comment_render(id, bar) {
         comment_list = s.get('comment_list');
         comment_list.forEach(function (each) {
-            if (each.id == id) {
+            if (each.id === id) {
                 comment_item_render(each, bar);
             }
         })
@@ -184,14 +184,13 @@
     /**单条评论渲染 */
     function comment_item_render(each, bar) {
         if (!each.comment) {
-            console.log("没内容")
+            console.log("没内容");
             return;
         }
         console.log('each.user', each.user);
         div = document.createElement('div');
         div.innerHTML = `
     <div>
-    
     <div>${each.user} : ${each.comment}</div>
     </div>
     `;

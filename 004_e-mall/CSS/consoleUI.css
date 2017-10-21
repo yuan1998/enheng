@@ -1,0 +1,58 @@
+#add_form label{
+    display: block;
+}
+#add_form{
+    width: 500px;
+    height: 500px;
+    background: rgba(0,0,0,0.3);
+}
+#add_bar{
+    position: absolute;
+    top: 200px;
+    left: 500px;
+}
+#add_bar_close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+#add_btn{
+    color:rgba(255,255,255,0.6);
+    background: rgba(0,0,0,0.7);
+    border: 1px solid rgba(0,0,0,0.7);
+    font-size: 25px;
+}
+#add_btn:active{
+    background: rgba(255,255,255,0.2);
+    color:rgba(0,0,0,0.7);
+}
+.title_bar .col{
+    font-size: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+#goods_wrap .create_date{
+    font-size: 13px;
+}
+#goods_wrap .col {
+    padding: 10px 0;
+    vertical-align: middle;
+}
+#goods_wrap button{
+    cursor: pointer;
+    height: 30px;
+    font-size: 20px;
+    color: rgba(0,0,0,0.9);
+    border: 1px solid rgba(0,0,0,0.3);
+    background: rgba(255,255,255,0.5);
+}
+#goods_wrap button:active{
+    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.8);
+    background: rgba(0,0,0,0.7);
+}
+
+#goods_wrap .goods_price:before{
+    content: '¥';
+}

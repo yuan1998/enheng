@@ -1,0 +1,26 @@
+html :
+
+&#x + 16进制编码  + ；
+
+&# + 10进制编码  + ；
+
+
+css:
+
+\ + 16进制编码
+
+
+js :
+
+\u + 4位16进制编码
+
+\x + 2位16进制编码
+
+Unicode
+function findSurrogatePair(point) {
+  // assumes point > 0xffff
+  var offset = point - 0x10000,
+      lead = 0xd800 + (offset >> 10),
+      trail = 0xdc00 + (offset & 0x3ff);
+  return [lead.toString(16), trail.toString(16)];
+}

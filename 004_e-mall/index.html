@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理端</title>
+    <link rel="stylesheet" href="./CSS/grid.css">
+    <link rel="stylesheet" href="./CSS/consoleUI.css">
+</head>
+<body>
+<div class="row" id="page">
+    <div class="col col-3">
+        <button id="add_btn" class="col-12">add+</button>
+    </div>
+    <div id="goodsBar" class="col col-9 center" style="background: aliceblue">
+        <div class="title_bar row">
+            <span class="col id col-1">编号</span>
+            <span class="col tag col-1">标签</span>
+            <span class="col goods_title col-2">标题</span>
+            <span class="col goods_info col-2">信息</span>
+            <span class="col goods_price col-1">价格</span>
+            <span class="col create_date col-2">创建日期</span>
+            <span class="col btn_bar col-3">操作</span>
+        </div>
+        <div id="goods_wrap"></div>
+    </div>
+</div>
+<div id="add_bar" style="display:none">
+    <form id="add_form">
+        <button type="button" id="add_bar_close">X</button>
+        <input type="hidden" id="test">
+        <span>标题</span><input type="text" name="title" id="title_input">
+        <span>信息</span><input type="text" name="info" id="info_input">
+        <span>图片地址</span><input type="text" name="imgUrl" id="img_input">
+        <span>价格</span><input type="text" name="price" id="price_input">
+        <label>
+            <input type="checkbox" name="new">新品
+        </label>
+        <label>
+            <input type="checkbox" name="hot">热卖
+        </label>
+        <button type="submit" id="add_form_btn">提交</button>
+    </form>
+</div>
+<script src="./JS/local.js"></script>
+<script src="./JS/base.js"></script>
+<script src="JS/IndexUI.js"></script>
+</body>
+</html>
