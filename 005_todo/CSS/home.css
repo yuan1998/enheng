@@ -1,0 +1,266 @@
+* {
+    font-family: 'STKaiti', 'Microsoft JhengHei';
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: middle;
+}
+
+body {
+    background: #eee;
+}
+#addTaskInput {
+    height: 40px;
+    width: 300px;
+    font-size: 16px;
+    line-height: 40px;
+    padding-left: 5px;
+    border: 1px solid #FF295E;
+    border-right: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background: #fff;
+    color: #8F0024;
+}
+#searchBtn {
+    line-height: 38px;
+    cursor: pointer;
+    margin-left: -10px;
+    height: 40px;
+    font-size: 23px;
+    color: #FF295E;
+    border: 1px solid #FF295E;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #fff;
+    border-left: none;
+    padding: 0 10px;
+}
+#searchBtn:hover{
+    color: #fff;
+    background: #FF295E;
+}
+
+#wrap {
+    margin: 120px auto;
+    background: #ffffff;
+    max-width: 900px;
+    box-shadow: 0px 0px 15px rgba(255, 16, 144, 0.3);
+}
+
+#addTaskForm:before{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    content: 'Todo.';
+    font-family: 'PennaRegular';
+    font-weight: normal;
+    font-style: normal;
+    color: #FF295E;
+    font-size: 110px;
+}
+
+#overTaskBar:after{
+    font-family: 'PennaRegular';
+    font-weight: normal;
+    font-style: normal;
+    content: 'Complete.';
+    color: #FF295E;
+    font-size: 25px;
+    position: absolute;
+    left: 80px;
+    top: -34px;
+}
+#taskBar:after{
+    font-family: 'PennaRegular';
+    font-weight: normal;
+    font-style: normal;
+    content: 'Undone.';
+    color: #FF295E;
+    font-size: 30px;
+    position: absolute;
+    left: 80px;
+    top: -39px;
+}
+#taskBar{
+    margin-bottom: 50px;
+}
+#overTaskBar,
+#taskBar {
+    max-width: 900px;
+    padding: 0 100px;
+}
+
+#overTaskBar button,
+#taskBar button {
+
+    cursor: pointer;
+    text-align: right;
+    border: 0 solid rgba(0, 0, 0, 0.5);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 22px;
+    color: #420011;
+}
+
+#overTaskBar .title,
+#taskBar .title {
+    font-size: 20px;
+    line-height: 20px;
+    width: 50%;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: middle;
+    color: #8F0024;
+}
+
+#overTaskBar .outBtn,
+#taskBar .outBtn {
+    vertical-align: middle;
+    width: 5%;
+}
+
+#overTaskBar .date:before {
+    content: '完成于： ';
+}
+
+#taskBar .date:before {
+    content: '创建于： ';
+}
+
+#taskBar .date,
+#overTaskBar .date {
+    width: 22%;
+    display: inline-block;
+    font-size: 13px;
+    color: #320042;
+}
+
+#taskBar .item,
+#overTaskBar .item {
+    height: 40px;
+    line-height: 40px;
+    margin: 15px 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+#overTaskBar .title {
+    text-decoration: line-through;
+}
+
+#addTaskForm {
+    padding-top: 153px;
+    padding-bottom: 36px;
+
+}
+#updataBar{
+    height: 1100px;
+    background: rgba(255,255,255,0.8);
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    max-width: 2000px;
+    width: 100%;
+    padding-top: 370px;
+}
+#updataInput{
+    margin-top: 75px;
+    height: 50px;
+    width: 600px;
+    font-size: 25px;
+    line-height: 50px;
+    padding-left: 5px;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    border-right: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background: #fff;
+    display: inline-block;
+}
+#updataBtn {
+    margin-top: 75px;
+    line-height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #FF668C;
+    margin-left: -10px;
+    height: 50px;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #fff;
+    border-left: none;
+    display: inline-block;
+}
+#updataForm {
+    display: block;
+    vertical-align: middle;
+    max-width: 800px;
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid rgba(255,0,0,0.5);
+    border-radius: 3px;
+
+}
+#updataCloseBtn{
+    border: 1px solid rgba(255,0,0,0.5);
+    height: 20px;
+    width: 20px;
+    color: rgba(255,0,0,0.5);
+    padding-left: 6px;
+    padding-top: 2px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+#updataBtn:hover,
+#updataCloseBtn:hover{
+    color:#fff;
+    background:#FF668C;
+}
+
+.btnWrap{
+    display: block;
+    padding-bottom: 100px;
+}
+.btnWrap .text{
+    font-size: 12px;
+    color: rgba(255, 47, 107, 0.6);
+}
+.btnWrap .actionBtn{
+    font-family: 'PennaRegular';
+    font-weight: normal;
+    font-style: normal;
+    margin: 10px 0;
+    color: #FF295E;
+    width: 110px;
+    height: 40px;
+    font-size: 27px;
+    line-height: 43px;
+    background: #fff;
+    border: 1px solid #FF295E;
+    border-radius:5px;
+    cursor: pointer;
+}
+.btnWrap .actionBtn:hover{
+    color: #fff;
+    background: #FF295E;
+}
+.waring{
+    font-family: 'PennaRegular';
+    font-weight: normal;
+    font-style: normal;
+    color: #FF295E;
+    font-size: 40px;
+    padding: 20px 0;
+}

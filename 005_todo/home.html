@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo</title>
+    <link rel="stylesheet" href="./CSS/grid.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/penna" type="text/css"/>
+    <link rel="stylesheet" href="./CSS/home.css">
+</head>
+<body>
+<div id="wrap" class="wrapper center">
+    <form id="addTaskForm" class="">
+        <label for="addTaskInput">
+            <input type="text" autocomplete="off" id="addTaskInput">
+        </label>
+        <button type="submit" id="searchBtn">+</button>
+    </form>
+    <div id="taskBar" class="wrapper left"></div>
+    <div id="overTaskBar" class="wrapper left"></div>
+    <div class="btnWrap">
+        <span class="text">最多只能显示两天内的六条消息</span>
+        <form action="./oldTask.html">
+            <button class="actionBtn">More</button>
+        </form>
+    </div>
+</div>
+<div class="wrapper center" id="updataBar" style="display:none">
+    <form id="updataForm">
+        <input type="text" name="title" autocomplete="off" id="updataInput">
+        <button id="updataBtn"  type="submit">更新</button>
+        <button type="button" id="updataCloseBtn">X</button>
+    </form>
+</div>
+<script src="JS/local.js"></script>
+<script src="JS/base.js"></script>
+<script src="JS/home_ui.js"></script>
+</body>
+</html>
