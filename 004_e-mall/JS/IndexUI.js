@@ -30,24 +30,30 @@
         let goodsList = a.get('goodsList');
         goods_wrap.innerHTML = '';
         goodsList.forEach(function (each) {
-            let new_tag;
-            let newIndex = b.newIndex(each.id);
-            let hotIndex = b.hotIndex(each.id);
-            if (newIndex !== -1) {
-                if (hotIndex !== -1) {
-                    new_tag = String.fromCharCode("0xd83c", "0xdd95") + String.fromCharCode("0xd83d", "0xdd25");
-                } else {
-                    new_tag = String.fromCharCode("0xd83c", "0xdd95");
-                }
+            oneRender(each);
+        })
+    }
+
+    /*  单个渲染  */
+    function oneRender(each) {
+        let new_tag,
+            newIndex = b.newIndex(each.id),
+            hotIndex = b.hotIndex(each.id),
+            div = document.createElement('div');
+        if (newIndex !== -1) {
+            if (hotIndex !== -1) {
+                new_tag = String.fromCharCode("0xd83c", "0xdd95") + String.fromCharCode("0xd83d", "0xdd25");
             } else {
-                if (hotIndex !== -1) {
-                    new_tag = String.fromCharCode("0xd83d", "0xdd25");
-                } else {
-                    new_tag = '-';
-                }
+                new_tag = String.fromCharCode("0xd83c", "0xdd95");
             }
-            let div = document.createElement('div');
-            div.innerHTML = `
+        } else {
+            if (hotIndex !== -1) {
+                new_tag = String.fromCharCode("0xd83d", "0xdd25");
+            } else {
+                new_tag = '-';
+            }
+        }
+        div.innerHTML = `
             <span class="col id col-1">${each.id}</span>
             <span class="col tag col-1">${new_tag}</span>
             <span class="col goods_title col-2">${each.title}</span>
@@ -59,13 +65,13 @@
             <button class="del_btn">删除</button>  
             </span>
             `;
-            div.setAttribute('class', 'row');
-            div.setAttribute('data-id', each.id);
-            goods_wrap.insertBefore(div, goods_wrap.firstChild);
-            updataEvent(div.querySelector('.updata_btn'), each.id);
-            delEvent(div.querySelector('.del_btn'), each.id);
-        })
+        div.setAttribute('class', 'row');
+        div.setAttribute('data-id', each.id);
+        goods_wrap.insertBefore(div, goods_wrap.firstChild);
+        updataEvent(div.querySelector('.updata_btn'), each.id);
+        delEvent(div.querySelector('.del_btn'), each.id);
     }
+
 
     /*  删除数据  */
     function delEvent(btn, id) {
@@ -79,35 +85,30 @@
     function updataEvent(btn, id) {
         btn.addEventListener('click', function () {
             test.value = id;
-            let item = b.find(id);
-            let hotindex = b.hotIndex(id);
-            let newindex = b.newIndex(id);
-            let input = add_form.querySelectorAll('input');
+            let item = b.find(id),
+                hotindex = b.Index(id,'hotList'),
+                newindex = b.Index(id,'newList'),
+                input = add_form.querySelectorAll('input');
             for (let i = 0; i < input.length; i++) {
                 if (input[i].type === 'hidden') {
                     continue;
                 }
-                if (input[i].name === 'hotList') {
-                    if(hotindex !== -1){
+                if (input[i].name === 'hotList' && hotindex !== -1) {
                         input[i].checked = true;
-                    }
-                    continue;
                 }
-                if (input[i].name === 'newList') {
-                    if(newindex !== -1){
+                if (input[i].name === 'newList' && newindex !== -1) {
                         input[i].checked = true;
-                    }
+                }
+                if(input[i].type === 'checkbox'){
                     continue;
                 }
                 for (let j in item) {
                     if (input[i].name === j) {
-
                         input[i].value = item[j];
                     }
                 }
             }
             add_bar.style.display = 'block';
-            console.log(test.value);
         })
 
     }
@@ -118,10 +119,6 @@
             e.preventDefault();
             let hotD = hotCheck.checked;
             let newD = newCheck.checked;
-            console.log('hotD', hotD);
-            console.log('newD', newD);
-            console.log('newCheck.name', newCheck.name);
-            console.log('hotCheck.name', hotCheck.name);
             if (!test.value) {
                 console.log('true');
                 let pack = packVal();
@@ -135,7 +132,6 @@
                 render();
                 add_bar.style.display = 'none';
             } else {
-                console.log('false');
                 let id = parseInt(test.value);
                 let pack = packVal();
                 test.value = '';

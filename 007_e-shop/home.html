@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>enheng?</title>
+    <style>
+        [data-link] {
+            border: 1px solid tomato;
+        }
+
+        [data-page] {
+            display: block;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+<span data-link="home">首页</span>
+<span data-link="admin">管理</span>
+<span data-link="login">Login</span>
+<div data-page="home" class="page home">Hello Words
+</div>
+<div data-page="admin" class="page admin">Hello Admin
+    <span data-link="home">Back Home</span>
+</div>
+<div data-page="login" class="page login">Error
+    <span data-link="home">Back home</span>
+</div>
+<script src="js/storage.js"></script>
+<script src="js/page.js"></script>
+</body>
+</html>

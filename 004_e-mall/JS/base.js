@@ -18,8 +18,9 @@
         findIndex: findIndex,
         listAdd: listAdd,
         listDel: listDel,
-        hotIndex:hotIndex,
-        newIndex:newIndex,
+        hotIndex: hotIndex,
+        newIndex: newIndex,
+        Index: Index,
     };
     /*  检测  */
 
@@ -78,26 +79,23 @@
     /*  更新  */
     function updata(id, pack) {
         let index = findIndex(id);
-        let goodsInfo = goodsList[index];
         pack.price = parseFloat(pack.price).toFixed(2);
-        goodsList[index] = Object.assign({}, goodsInfo, pack);
+        if (pack.price === 'NaN') {
+            alert('去你的价格');
+            return;
+        }
+        goodsList[index] = Object.assign({}, goodsList[index], pack);
         sync();
     }
 
     /*  删  */
     function del(id) {
         let index = findIndex(id);
-        goodsList[index].visible = false;
-        goodsList.forEach(function (e, i) {
-            if (!e.visible) {
-                oldGoodsList.push(e);
-                goodsList.splice(i, 1);
-            }
-        });
+        goodsList.splice(index, 1);
+        listDel('hotList', id, false);
+        listDel('newList', id, false);
         sync();
-        a.set("oldGoodsList", oldGoodsList);
     }
-
     /*  读  */
     function read(id) {
         if (id) {
@@ -118,13 +116,24 @@
             return e.id === id;
         })
     }
+
     function hotIndex(id) {
+        hotList = a.get("hotList");
         return hotList.findIndex(function (e) {
             return e === id;
         })
     }
+
     function newIndex(id) {
+        newList = a.get("newList");
         return newList.findIndex(function (e) {
+            return e === id;
+        })
+    }
+
+    function Index(id, name) {
+        name = a.get(name);
+        return name.findIndex(function (e) {
             return e === id;
         })
     }
@@ -134,8 +143,6 @@
         let list = a.get(name);
         let id = a.get('goodsIdList') + 1;
         list.push(id);
-        console.log('list',list);
-        console.log('name',name);
         a.set(name, list);
 
     }
@@ -143,17 +150,15 @@
     /*  hot删除  */
     function listDel(name, id, bool) {
         let list = a.get(name);
-        let index = findIndex(id);
+        let index = Index(id, name);
         if (bool) {
-            if (index !== -1) {
+            if (index === -1) {
                 list.push(id);
-                console.log('list',list);
                 a.set(name, list);
             }
         } else {
             if (index !== -1) {
                 list.splice(index, 1);
-                console.log('list',list);
                 a.set(name, list);
             }
         }

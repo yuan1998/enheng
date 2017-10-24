@@ -17,6 +17,7 @@ js :
 \x + 2位16进制编码
 
 Unicode
+
 function findSurrogatePair(point) {
   // assumes point > 0xffff
   var offset = point - 0x10000,

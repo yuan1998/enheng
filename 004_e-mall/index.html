@@ -31,10 +31,18 @@
     <form id="add_form">
         <button type="button" id="add_bar_close">X</button>
         <input type="hidden" id="test">
-        <span>标题</span><input type="text" name="title" id="title_input">
-        <span>信息</span><input type="text" name="info" id="info_input">
-        <span>图片地址</span><input type="text" name="imgUrl" id="img_input">
-        <span>价格</span><input type="text" name="price" id="price_input">
+        <label>
+            <span>标题:</span><input type="text" name="title" autocomplete="off" id="title_input">
+        </label>
+        <label>
+            <span>信息:</span><input type="text" name="info" autocomplete="off" id="info_input">
+        </label>
+        <label>
+            <span>图片地址:</span><input type="text" name="imgUrl" autocomplete="off" id="img_input">
+        </label>
+        <label>
+            <span>价格:</span><input type="text" name="price" autocomplete="off" id="price_input">
+        </label>
         <label>
             <input type="checkbox" name="newList" id="newCheck">新品
         </label>
