@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab5f648e-b1b5-4e7c-bc35-f3bee2d58fe9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/006_parent_id/js/data.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/006_parent_id/test.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/007_e-shop/home.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/007_e-shop/js/page.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/007_e-shop/js/storage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/007_e-shop/CSS/grid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/007_e-shop/js/procure.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/007_e-shop/js/procureUI.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/004_e-mall/JS/IndexUI.js" afterPath="$PROJECT_DIR$/004_e-mall/JS/IndexUI.js" />
-      <change beforePath="$PROJECT_DIR$/004_e-mall/JS/base.js" afterPath="$PROJECT_DIR$/004_e-mall/JS/base.js" />
-      <change beforePath="$PROJECT_DIR$/004_e-mall/index.html" afterPath="$PROJECT_DIR$/004_e-mall/index.html" />
-      <change beforePath="$PROJECT_DIR$/JS小笔记.txt" afterPath="$PROJECT_DIR$/JS小笔记.txt" />
+      <change beforePath="$PROJECT_DIR$/007_e-shop/home.html" afterPath="$PROJECT_DIR$/007_e-shop/home.html" />
+      <change beforePath="$PROJECT_DIR$/007_e-shop/js/page.js" afterPath="$PROJECT_DIR$/007_e-shop/js/page.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,6 +16,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="实战" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="JS小笔记.txt" pinned="false" current-in-tab="false">
@@ -27,16 +26,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="576">
               <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/007_e-shop/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -52,11 +41,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/007_e-shop/js/page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="512">
+              <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/007_e-shop/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="34" column="53" lean-forward="true" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grid.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/007_e-shop/CSS/grid.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-881">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="procure.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/007_e-shop/js/procure.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+              <folding>
+                <marker date="1508851820000" expanded="true" signature="1645:1790" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="procureUI.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/007_e-shop/js/procureUI.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -114,8 +147,10 @@
         <option value="$PROJECT_DIR$/JS小笔记.txt" />
         <option value="$PROJECT_DIR$/004_e-mall/index.html" />
         <option value="$PROJECT_DIR$/006_parent_id/js/data.js" />
-        <option value="$PROJECT_DIR$/007_e-shop/home.html" />
         <option value="$PROJECT_DIR$/007_e-shop/js/storage.js" />
+        <option value="$PROJECT_DIR$/007_e-shop/js/procureUI.js" />
+        <option value="$PROJECT_DIR$/007_e-shop/js/procure.js" />
+        <option value="$PROJECT_DIR$/007_e-shop/home.html" />
         <option value="$PROJECT_DIR$/007_e-shop/js/page.js" />
       </list>
     </option>
@@ -198,7 +233,24 @@
             <path>
               <item name="实战" type="b2602c69:ProjectViewProjectNode" />
               <item name="实战" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="005_todo" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="实战" type="b2602c69:ProjectViewProjectNode" />
+              <item name="实战" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="005_todo" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="CSS" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="实战" type="b2602c69:ProjectViewProjectNode" />
+              <item name="实战" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="007_e-shop" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="实战" type="b2602c69:ProjectViewProjectNode" />
+              <item name="实战" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="007_e-shop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="CSS" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="实战" type="b2602c69:ProjectViewProjectNode" />
@@ -225,6 +277,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/007_e-shop/CSS" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/005_todo/CSS" />
       <recent name="$PROJECT_DIR$/004_e-mall/CSS" />
@@ -268,13 +321,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127538000" />
+    <option name="totallyTimeSpent" value="136140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18177083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18177083" sideWeight="0.49611652" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.503125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -282,7 +335,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3145631" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18177083" sideWeight="0.5038835" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -307,34 +360,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/005_todo/CSS/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5856">
-          <caret line="183" column="4" lean-forward="true" selection-start-line="183" selection-start-column="4" selection-end-line="183" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/004_e-mall/JS/local.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/004_e-mall/JS/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#2106#2278#0" expanded="false" />
-            <element signature="e#2315#2405#0" expanded="false" />
-            <element signature="e#2444#2539#0" expanded="false" />
-            <element signature="e#3017#3137#0" expanded="false" />
-            <element signature="e#3184#3317#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/004_e-mall/JS/IndexUI.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1536">
@@ -605,6 +630,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="574">
           <caret line="95" column="4" lean-forward="true" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -649,6 +675,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -719,6 +746,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/007_e-shop/js/procure.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding>
+            <marker date="1508851820000" expanded="true" signature="1645:1790" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/007_e-shop/js/procureUI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/007_e-shop/CSS/grid.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-881">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/007_e-shop/js/storage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -727,19 +780,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/007_e-shop/home.html">
+    <entry file="file://$PROJECT_DIR$/007_e-shop/js/page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        <state relative-caret-position="512">
+          <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/007_e-shop/js/page.js">
+    <entry file="file://$PROJECT_DIR$/007_e-shop/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="420">
+          <caret line="34" column="53" lean-forward="true" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>enheng?</title>
+    <link rel="stylesheet" href="CSS/grid.css">
     <style>
         [data-link] {
             border: 1px solid tomato;
@@ -26,13 +27,42 @@
 <span data-link="login">Login</span>
 <div data-page="home" class="page home">Hello Words
 </div>
-<div data-page="admin" class="page admin">Hello Admin
-    <span data-link="home">Back Home</span>
+<div data-page="admin" class="page admin">
+    <h2>后台</h2>
+   <div class="row">
+       <ul class="col col-2">
+            <li data-admin-link="admin_procure">商品管理</li>
+            <li data-admin-link="admin_cat">分类管理</li>
+       </ul>
+       <div data-admin-page="admin_procure" class="col col-10">
+           <form id="procure_form">
+               <input type="hidden" name="id">
+               <span>标题</span><input type="text" name="title"><br>
+               <span>价格</span><input type="text" name="price"><br>
+               <button type="submit">提交</button>
+           </form>
+           <table>
+               <thead>
+               <tr>
+                   <th>标题</th>
+                   <th>价格</th>
+               </tr>
+               </thead>
+               <tbody id="procure_tbody"></tbody>
+
+           </table>
+       </div>
+       <div class="col col-10" data-admin-page="admin_cat">维护中</div>
+   </div>
 </div>
 <div data-page="login" class="page login">Error
     <span data-link="home">Back home</span>
 </div>
 <script src="js/storage.js"></script>
 <script src="js/page.js"></script>
+<script src="js/procureUI.js"></script>
+
+<script src="js/procure.js"></script>
+
 </body>
 </html>
