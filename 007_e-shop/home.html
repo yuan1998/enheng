@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="CSS/grid.css">
     <style>
         [data-link] {
-            border: 1px solid tomato;
+            background: #eeeeee;
+        }
+        [data-link]:hover {
+            background: rgba(0,0,0,0.3);
         }
 
         [data-page] {
@@ -19,50 +22,154 @@
         [hidden] {
             display: none !important;
         }
+
+        .subCatList {
+            position: absolute;
+            top: 0;
+            margin: auto;
+            right: -32px;
+
+        }
+
+        .subCatList,
+        #catBar {
+            background: rgba(0, 0, 0, 0.11);
+
+        }
+
+        .catListItem:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .title{
+            font-size: 22px;
+            padding: 15px;
+        }
+        .product_item{
+            /*border: 1px solid rgba(0,0,0,0.5);*/
+            background: #fff;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
 <span data-link="home">首页</span>
 <span data-link="admin">管理</span>
 <span data-link="login">Login</span>
-<div data-page="home" class="page home">Hello Words
+<div data-page="home" class="page home">
+    <div id="mianBar" class="row">
+        <div id="catTitle" class="col col-12">分类</div>
+        <div id="catBar" class="col col-3"></div>
+    </div>
+    <div id="productAllWrap">
+        <div class="hotTitle col title col-12">热卖</div>
+
+        <div class=" row" id="hot_product_bar">
+        </div>
+        <div class="newTitle col title col-12">新品</div>
+
+        <div class="row" id="new_product_bar">
+        </div>
+        <div class="productTitle title col col-12">全部商品</div>
+
+        <div id="all_product_bar" class="row">
+        </div>
+    </div>
+    <div id="catFiller"></div>
 </div>
 <div data-page="admin" class="page admin">
     <h2>后台</h2>
-   <div class="row">
-       <ul class="col col-2">
+    <div class="row">
+        <ul class="col col-2">
             <li data-admin-link="admin_procure">商品管理</li>
             <li data-admin-link="admin_cat">分类管理</li>
-       </ul>
-       <div data-admin-page="admin_procure" class="col col-10">
-           <form id="procure_form">
-               <input type="hidden" name="id">
-               <span>标题</span><input type="text" name="title"><br>
-               <span>价格</span><input type="text" name="price"><br>
-               <button type="submit">提交</button>
-           </form>
-           <table>
-               <thead>
-               <tr>
-                   <th>标题</th>
-                   <th>价格</th>
-               </tr>
-               </thead>
-               <tbody id="procure_tbody"></tbody>
+        </ul>
+        <div data-admin-page="admin_procure" class="col col-10">
+            <form id="procure_form">
+                <input type="hidden" name="id">
+                <span>标题</span><input type="text" name="title"><br>
+                <span>价格</span><input type="text" name="price"><br>
+                <span>图片地址</span><input type="text" name="imageUrl"><br>
+                <div id="select_bar"></div>
+                <label for="newBtn">
+                    <input type="checkbox" id="newBtn" data-name="newList">新品
+                </label>
+                <label for="hotBtn">
+                    <input type="checkbox" id="hotBtn" data-name="hotList">热卖
+                </label>
+                <label for="1111Btn">
+                    <input type="checkbox" id="1111Btn" data-name="iiList">双十一
+                </label>
+                <button type="submit">提交</button>
+            </form>
+            <table>
+                <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>标签</th>
+                    <th>标题</th>
+                    <th>价格</th>
+                    <th>分类</th>
 
-           </table>
-       </div>
-       <div class="col col-10" data-admin-page="admin_cat">维护中</div>
-   </div>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody id="procure_tbody" class="center"></tbody>
+
+            </table>
+        </div>
+        <div class="col col-10" data-admin-page="admin_cat">
+            <form id="add_cat_form">
+                <input type="hidden" name="id">
+                <span>标题</span><input type="text" name="title"><br>
+                <span>pid</span><input type="text" name="pid"><br>
+                <button type="submit">提交</button>
+            </form>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>PID</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody id="cat_list" class="center"></tbody>
+            </table>
+        </div>
+    </div>
 </div>
-<div data-page="login" class="page login">Error
+<div data-page="login" class="page login">
+    <div id="loginBar">
+        <span data-authorize-link="login" id="siginPage">登陆</span>
+        <span data-authorize-link="signUp" id="loginPage">注册</span>
+    </div>
+    <div data-authorize-page="login">
+        <form>
+            <span>邮箱</span><input type="text" name="email" ><br>
+            <span>密码</span><input type="password" name="password" ><br>
+            <button>登陆</button>
+        </form>
+    </div>
+    <div data-authorize-page="signUp">
+        <form>
+            <span>邮箱</span><input type="text" name="email" ><br>
+            <span>密码</span><input type="password" name="password"><br>
+            <span>再次输入</span><input type="password" name="againPassword"><br>
+            <button>注册</button>
+        </form>
+    </div>
     <span data-link="home">Back home</span>
 </div>
-<script src="js/storage.js"></script>
-<script src="js/page.js"></script>
-<script src="js/procureUI.js"></script>
+<script src="js/base/storage.js"></script>
+<script src="js/base/page.js"></script>
+<script src="js/method/new.js"></script>
+<script src="js/method/cat.js"></script>
 
-<script src="js/procure.js"></script>
+<script src="js/method/procureUI.js"></script>
+<script src="js/UI/home.js"></script>
+<script src="js/UI/cat.js"></script>
+<script src="js/UI/procure.js"></script>
+
 
 </body>
 </html>
