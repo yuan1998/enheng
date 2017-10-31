@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>enheng?</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="test.js"></script>
+
+    <style>
+
+        * {
+            margin: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eee;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .row {
+            font-size: 0;
+        }
+
+        .col {
+            display: inline-block;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            padding: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        .col-1 {
+            width: 15%;
+        }
+
+        .col-9 {
+            width: 85%;
+        }
+
+        /*searchBar*/
+        .searchHome {
+            position: relative;
+            top: 300px;
+            text-align: center;
+        }
+
+        .searchResult {
+            position: fixed;
+            top: 0;
+            text-align: center;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 0 0;
+        }
+
+        #searchBar input {
+            width: 300px;
+            height: 35px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            outline: black;
+            font-size: 20px;
+            line-height: 35px;
+
+        }
+
+        #searchBar button {
+            margin-left: -6px;
+            height: 35px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            width: 50px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background: #fff;
+            line-height: 35px;
+            outline: none;
+        }
+
+        #searchBar button:hover {
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+        }
+
+        /* items*/
+
+        .booksWrap,
+        .moreBooks{
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+        .moreBooks{
+            text-align: center;
+
+        }
+
+
+        .bookItem:first-child {
+            margin-top: 70px;
+        }
+
+        .bookItem {
+            background: #fff;
+            margin: 10px;
+        }
+
+        .coverImage {
+            padding: 10px;
+        }
+
+        .tag {
+
+            padding: 0 5px;
+        }
+
+        .author {
+            padding: 0 10px;
+        }
+        .rating{
+            font-size: 18px;
+        }
+        .count{
+            font-size: 14px;
+        }
+
+        .bookAuthors:before {
+            content: '作者:';
+            font-size: 20px;
+
+        }
+
+        .bookSummary:before {
+            content: '内容简介 :';
+            font-size: 20px;
+        }
+
+        .tags:before {
+            content: 'Tags:';
+            font-size: 20px;
+
+        }
+
+        .averageRating:before {
+            content: '评分:';
+            font-size: 20px;
+
+        }
+        .bookPrice:before {
+            content: '价格:';
+            font-size: 20px;
+
+        }
+
+        .bookInfo > * {
+            padding: 3px;
+        }
+
+        .bookInfo .bookSummary {
+            font-size: 15px;
+        }
+
+        .bookAuthor {
+            font-size: 10px;
+        }
+        .moreBtn{
+            background: #fff;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0,0,0,0.1);
+            outline: none;
+        }
+        .moreBtn:hover{
+            background:rgba(0,0,0,0.1);
+        }
+
+
+    </style>
+</head>
+<body>
+
+<form id="searchBar" class="searchHome">
+    <input type="text" autofocus>
+    <button>搜</button>
+</form>
+
+<div class="booksWrap">
+</div>
+<div class="moreBooks row">
+    <button class="moreBtn col">more</button>
+</div>
+
+
+</body>
+</html>
