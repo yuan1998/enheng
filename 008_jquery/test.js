@@ -8,6 +8,8 @@ $(function () {
     let more = $('.moreBtn');
     more.hide();
     let start;
+    let cache = 0;
+
 
     function ajaxJsonp(keyword) {
         $.ajax({
@@ -26,9 +28,10 @@ $(function () {
                 render(list);
                 form.attr('class', 'searchResult');
                 start += 10;
-                if (list.length === 10){
+                cache = 0;
+                if (list.length === 10) {
                     more.show();
-                }else {
+                } else {
                     more.hide();
                 }
             },
@@ -43,6 +46,23 @@ $(function () {
         ajaxJsonp(key)
     });
 
+    let winodw = $(window);
+
+    winodw.scroll(function () {
+        if (winodw.scrollTop() + winodw.height() > $(document).height() - 200) {
+            console.log(cache)
+            if(cache===0){
+                console.log(cache,'开始');
+
+                let key = inp.val();
+                cache++;
+                console.log(start);
+                ajaxJsonp(key);
+            }
+        }
+    });
+
+    /*
     more.on('click', function () {
         let key = inp.val();
         console.log(start);
@@ -50,6 +70,7 @@ $(function () {
         ajaxJsonp(key);
 
     });
+    */
 
     function render(list) {
         list.forEach(function (e) {

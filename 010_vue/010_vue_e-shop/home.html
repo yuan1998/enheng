@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>enheng?</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/base.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <product-wrap></product-wrap>
+    <cat-wrap></cat-wrap>
+</div>
+
+<template id="product-wrap-tpl">
+    <div id="product">
+        <div id="productAdd">
+            <form id="productForm" @submit.prevent="addupdate()">
+                <input type="text" v-model="productItem.title">
+                <input type="number" v-model.number="productItem.price">
+                <div>
+                    <select @change="cat($event)" v-model="catf">
+                        <option value="">-未定义-</option>
+                        <option v-for="item in catTrees[0]" :value="item.id">{{item.title}}</option>
+                    </select>
+                </div>
+                <button type="submit">提交</button>
+            </form>
+        </div>
+        <div id="allProduct">
+            <ul v-for="item in productList">
+                <li class="pItemTitle">标题: {{item.title}}</li>
+                <li class="pItemPrice">价格: {{item.price}}</li>
+                <li>操作:
+                    <button @click="del(item.id)">删</button>
+                    <button @click="fillData(item.id)">改</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+<template id="cat-wrap-tpl">
+    <div id="cat">
+        <div id="catAdd">
+            <form id="catForm" @submit.prevent="addupdate">
+                <input type="text" v-model="catItem.title">
+                <input type="number" v-model.number="catItem.parentId">
+                <button type="submit"></button>
+            </form>
+        </div>
+
+        <div id="AllCat">
+            <ul v-for="item in catList">
+                <li>ID: {{item.id}}</li>
+                <li>标题: {{item.title}}</li>
+                <li>Pid: {{item.parentId}}</li>
+                <li>
+                    <button @click="del(item.id)">删</button>
+                    <button @click="fillData(item.id)">改</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</template>
+
+</body>
+</html>

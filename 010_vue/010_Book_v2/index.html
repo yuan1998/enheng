@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>enheng?</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="test.js"></script>
+
+    <style>
+
+        * {
+            margin: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eee;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .row {
+            font-size: 0;
+        }
+
+        .col {
+            display: inline-block;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            padding: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .col-1 {
+            width: 15%;
+        }
+
+        .col-9 {
+            width: 85%;
+        }
+
+        /*searchBar*/
+        .searchHome {
+            position: relative;
+            top: 300px;
+            text-align: center;
+        }
+
+        .searchResult {
+            position: fixed;
+            top: 0;
+            text-align: center;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 0 0;
+        }
+
+        #searchBar input {
+            width: 300px;
+            height: 35px;
+            border: none;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            outline: black;
+            background: #eee;
+            font-size: 20px;
+            line-height: 35px;
+
+        }
+
+        #searchBar button {
+            margin-left: -6px;
+            height: 35px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            width: 50px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background: #fff;
+            line-height: 35px;
+            outline: none;
+        }
+
+        #searchBar button:hover {
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+        }
+
+        /* items*/
+
+        #booksWrap,
+        .moreBooks {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .moreBooks {
+            text-align: center;
+
+        }
+
+        .bookItem:first-child {
+            margin-top: 70px;
+        }
+
+        .bookItem {
+            background: #fff;
+            margin: 10px;
+        }
+
+        .coverImage {
+            padding: 10px;
+        }
+
+        .tag {
+
+            padding: 0 5px;
+        }
+
+        .author {
+            padding: 0 10px;
+        }
+
+        .rating {
+            font-size: 18px;
+        }
+
+        .count {
+            font-size: 14px;
+        }
+
+        .bookAuthors:before {
+            content: '作者:';
+            font-size: 20px;
+
+        }
+
+        .bookSummary:before {
+            content: '内容简介 :';
+            font-size: 20px;
+        }
+
+        .tags:before {
+            content: 'Tags:';
+            font-size: 20px;
+
+        }
+
+        .averageRating:before {
+            content: '评分:';
+            font-size: 20px;
+
+        }
+
+        .bookPrice:before {
+            content: '价格:';
+            font-size: 20px;
+
+        }
+
+        .bookInfo > * {
+            padding: 3px;
+            margin-right: 10px;
+        }
+
+        .bookInfo .bookSummary {
+            font-size: 15px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+        }
+
+        .bookAuthor {
+            font-size: 10px;
+        }
+
+        .moreBtn {
+            background: #fff;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        .moreBtn:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="vueWrap">
+    <form id="searchBar" v-bind:class="[one? searchHome : searchResult]" @submit.prevent="get_keyword()" >
+        <input type="text" autofocus v-model="keyword">
+        <button>搜</button>
+    </form>
+
+    <div id="booksWrap">
+        <div class="bookItem row" v-for="book in bookList">
+            <div class="coverImage col col-1">
+                <a :href="book.atl" target="_blank">
+                    <img :src="book.image" alt="">
+                </a>
+            </div>
+            <div class="bookInfo col col-9">
+                <div class="col">
+                    <a :href="book.alt" target="_blank">
+                        <h1 class="bookTitle">{{book.title}}</h1>
+                    </a>
+                </div>
+                <div class="bookAuthors" >
+                    <span class="author" v-for="aut in book.author">{{aut}}</span>
+                </div>
+                <p class="bookSummary">{{book.summary || '暂无资料'}}</p>
+                <div class="tags ">
+                    <span class="tag" v-for="tag in book.tags">{{tag.name}}</span>
+                </div>
+                <div class="averageRating">
+                    <span class="rating">{{book.rating.average }}</span>
+                    <span class="count">{{book.rating.numRaters}}人评价</span>
+                </div>
+                <div class="bookPrice">{{book.price || '未知.'}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
